@@ -1,0 +1,88 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>520</x><y>596</y><w>230</w><h>250</h></coordinates><panel_attributes>/Persona/
+--
+-nombre:String
+-dni:String
+-notificaciones:ArrayList&lt;String&gt;
+--
++Persona()
++Persona(nombre:String, dni:String)
+
+/+notificar(notificacion:String):void/
+
++getNombre():Strubg
++getDni():String
++getNotificaciones():ArrayList&lt;String
+#agregarNotificacion(mensaje:String):void
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>336</y><w>510</w><h>210</h></coordinates><panel_attributes>Cliente
+--
+-mail:String
+-reservas:ArrayList&lt;Reserva&gt;
+--
++Cliente(nombre:String, dni:String, mail:String)
+
++getReservas():ArrayList&lt;Reserva&gt;
++getEmail():String
++realizarReserva(hotel:Hotel, habitacion:Habitacion:, inicio:LocalDate, fin:LocalDate):void
++notificar(notificacion:String):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>356</y><w>240</w><h>210</h></coordinates><panel_attributes>Recepcionista
+--
+-legajo:String
+--
++Recepcionista(nombre:String, dni:String, legajo:String)
+
++getLegajo():String
++confirmarReserva(reserva:Reserva, hotel:Hotel):void
++notificar(notificacion:String):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>66</y><w>160</w><h>200</h></coordinates><panel_attributes>Habitacion
+--
+-numero:int
+-tipo:TipoHabitacion
+-precioPorNoche:double
+--
++Habitacion(numero:int, tipo:TipoHabitacion, precioPorNoche:double)
+
++getNumero():int
++getTipo():TipoHabitacion
++getPrecioPorNoche():double
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>26</y><w>330</w><h>280</h></coordinates><panel_attributes>Reserva
+--
+-cliente:Cliente
+-habitacion:Habitacion
+-fechaInicio:LocalDate
+-fechaFin:LocalDate
+-confirmada:boolean
+--
++Reserva(cliente:Cliente, habitacion:Habitacion, fechaInicio:LocalDate, fechaFin:LocalDate, confirmada:boolean)
+
++getFechaInicio():LocalDate
++getFechaFin():LocalDate
++getHabitacion():Habitacion
++getCliente():Cliente
++isConfirmada():boolean
++confirmar():void
++calcularTotal():double
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>6</y><w>240</w><h>310</h></coordinates><panel_attributes>Hotel
+--
+-nombre:String
+-direccion:String
+-habitaciones:ArrayList&lt;Habitacion&gt;
+-recepcionistas:ArrayList&lt;Recepcionista&gt;
+-reservas:ArrayList&lt;Reserva&gt;
+--
++Hotel()
++Hotel(nombre:String, direccion:String)
+
++getReservas():ArrayList&lt;Reserva&gt;
++getRecepcionistas():ArrayList&lt;Recepcionistas&gt;
++getHabitaciones():ArrayList&lt;Habitacion&gt;
++getDireccion():String
++getNombre():String
++agregarHabitacion(habitacion:Habitacion):void
++agregarRecepcionista(recepcionista:Recepcionista):void
++agregarReserva(reserva:Reserva):voidd
++buscarHabitacionesDisponibles(inicio:LocalDate, fin:LocalDate,tipo:TipoHabitacion):ArrayList&lt;Habitacion&gt;
++toString():String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>106</y><w>100</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoHabitacion
+--
++SIMPLE
++DOBLE
++SUITE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>536</y><w>240</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>220;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>556</y><w>130</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>136</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;20;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>296</y><w>820</w><h>620</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;250;10;600;800;600;800;10</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>296</y><w>70</w><h>80</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>50;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>256</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>40;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>236</y><w>100</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>80;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>96</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>86</y><w>100</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;110</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>306</y><w>170</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;150;50</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>26</y><w>390</w><h>100</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;80;10;10;370;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>226</y><w>980</w><h>720</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>190;10;10;10;10;700;960;700;960;80</additional_attributes></element></diagram>
